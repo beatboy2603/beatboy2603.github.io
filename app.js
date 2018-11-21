@@ -1,12 +1,15 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const fs = require('fs');
+const cors = require('cors');
 
 let app = express();
 
 app.use(bodyParser.urlencoded({
     extended: false
 }));
+
+app.use(cors());
 
 app.listen(process.env.PORT||6969, (err) => {
     if (err) {
