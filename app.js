@@ -9,7 +9,7 @@ app.use(bodyParser.urlencoded({
     extended: false
 }));
 
-app.use(corse());
+app.use(cors());
 
 app.listen(process.env.PORT||6969, (err) => {
     if (err) {
