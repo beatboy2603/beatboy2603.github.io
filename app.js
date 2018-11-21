@@ -16,20 +16,7 @@ app.listen(process.env.PORT||6969, (err) => {
     }
 });
 
-app.get('/html/question1', (req, res) => {
-    // QuestionModel.find({}, (err, questions) => {
-    //     let ranNum = Math.floor(Math.random() * questions.length);
-    //     QuestionModel.findOne({}).skip(ranNum == 0 ? ranNum : ranNum - 1).exec((err, questionFound) => {
-    //         if (err) console.log(err);
-    //         else {
-    //             res.send({
-    //                 mess: "success!",
-    //                 question: questionFound
-    //             });
-    //         }
-    //     });
-    // });
-
+app.get('/html/question1.html', (req, res) => {
     fs.readFile('./server/question1.txt', (err, fileData) => {
         if (err) console.log(err);
         else {
@@ -48,4 +35,17 @@ app.get('/html/question1', (req, res) => {
             }
         }
     })
+
+    // QuestionModel.find({}, (err, questions) => {
+    //     let ranNum = Math.floor(Math.random() * questions.length);
+    //     QuestionModel.findOne({}).skip(ranNum == 0 ? ranNum : ranNum - 1).exec((err, questionFound) => {
+    //         if (err) console.log(err);
+    //         else {
+    //             res.send({
+    //                 mess: "success!",
+    //                 question: questionFound
+    //             });
+    //         }
+    //     });
+    // });
 });
