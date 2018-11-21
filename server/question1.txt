@@ -1,0 +1,5 @@
+"question": "does 1+1 equal 2 in binary?",
+"answer1": "yes",
+"answer2": "no, it's 10",
+"answer3": "I don't know",
+"rightAnswer": "1"

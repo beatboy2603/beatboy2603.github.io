@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>QR Scanner Demo</title>
+    <link rel="stylesheet" type="text/css" href="./css/general.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 
@@ -26,13 +27,14 @@
             margin-bottom: 16px;
         }
 
-        div #div-qr-scanner {
+        /* div #div-qr-scanner {
             display: flex;
             align-items: center;
             justify-content: center
-        }
+        } */
     </style>
-    <div id="div-qr-scanner">
+    <div class="div-cover flex-box">Cover photo</div>
+    <div id="div-qr-scanner" class="flex-box">
         <video muted autoplay playsinline id="qr-video"></video>
         <canvas id="debug-canvas"></canvas>
     </div>
@@ -61,7 +63,7 @@
             label.highlightTimeout = setTimeout(() => label.style.color = 'inherit', 100);
             var splitedResult = result.split("//")
             if (splitedResult[1] === "question1"){
-                window.location.replace("./question1.html");
+                window.location.replace("./../html/question1.html");
             }
         }
 

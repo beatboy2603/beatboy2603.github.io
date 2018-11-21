@@ -4,25 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Question 1</title>
+    <link rel="stylesheet" type="text/css" href="./css/general.css">
+    <script src="./../js/main.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 
-<body onload="loadQuestion()">
-    <h1 id="demo">ABC</h1>
+<body>
+    <div class="div-cover flex-box">Cover photo</div>
+    <div class="flex-box">
+        <h1 id="demo">ABC</h1>
+    </div>
 
-    <script>
-        function loadQuestion() {
-            var xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function () {
-                if (this.readyState == 4 && this.status == 200) {
-                    document.getElementById("demo").innerHTML = this.responseText;
-                }
-            };
-            xhttp.open("GET", "question1.asp", true);
-
-            xhttp.send();
-        }
-    </script>
 </body>
 
 </html>

@@ -1,5 +1,0 @@
-question:does 1+1 equal 2 in binary?
-1:yes
-2:no, it's 10
-3:I don't know
-answer:1

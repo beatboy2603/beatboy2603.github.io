@@ -4,15 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <title>Index</title>
+    <link rel="stylesheet" type="text/css" href="./css/general.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 
 <body>
-    <button id="btn-qr-scan">Scanner</button>
+    <div class="div-cover flex-box">Cover photo</div>
+    <div class="flex-box">
+        <button id="btn-qr-scan">Scanner</button>
+    </div>
+    
 
     <script>
         $("#btn-qr-scan").click(function () {
-            window.location.replace("./qr-scan.html");
+            window.location.replace("./qr-scanner/qr-scan.html");
         });
     </script>
 </body>

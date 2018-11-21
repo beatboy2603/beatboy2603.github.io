@@ -1,0 +1,16 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.div-cover{
+    border: 1px red solid;
+    height: 100px;
+    width: 100%;
+}
+
+.flex-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

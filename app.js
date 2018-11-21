@@ -1,18 +1,51 @@
-var http = require('http');
-var url = require('url');
-var fs = require('fs');
+const express = require('express');
+const bodyParser = require('body-parser');
+const fs = require('fs');
 
-http.createServer(function (req, res) {
-    var q = url.parse(req.url, true);
-    var path = q.pathname;
-    var filename = "." + path.split(".")[0] + "txt";
-    fs.readFile(filename, function (err, data) {
-        if (err) {
-            res.writeHead(404, { 'Content-Type': 'text/html' });
-            return res.end("404 Not Found");
+let app = express();
+
+app.use(bodyParser.urlencoded({
+    extended: false
+}));
+
+app.listen(process.env.PORT||6969, (err) => {
+    if (err) {
+        console.log(err);
+    } else {
+        console.log("Server is listening at port 6969!");
+    }
+});
+
+app.get('/html/question1', (req, res) => {
+    // QuestionModel.find({}, (err, questions) => {
+    //     let ranNum = Math.floor(Math.random() * questions.length);
+    //     QuestionModel.findOne({}).skip(ranNum == 0 ? ranNum : ranNum - 1).exec((err, questionFound) => {
+    //         if (err) console.log(err);
+    //         else {
+    //             res.send({
+    //                 mess: "success!",
+    //                 question: questionFound
+    //             });
+    //         }
+    //     });
+    // });
+
+    fs.readFile('./server/question1.txt', (err, fileData) => {
+        if (err) console.log(err);
+        else {
+            try {
+                // let questions = JSON.parse(fileData);
+                // let randomNum = Math.floor(Math.random() * questions.length);
+                // let randomQuestion = questions[randomNum];
+                let question1 = JSON.parse(fileData);
+                res.send({
+                    message: "success!",
+                    question: question1
+                    // question: randomQuestion
+                });
+            } catch (error) {
+                console.log("ERROR", err);
+            }
         }
-        res.writeHead(200, { 'Content-Type': 'text/html' });
-        res.write(data);
-        return res.end();
-    });
-}).listen(8080);
+    })
+});
