@@ -11,14 +11,20 @@
     <h1 id="demo">ABC</h1>
 
     <script>
+        var url = require('url');
+
         function loadQuestion() {
+            var q = url.parse(req.url, true);
+            var path = q.pathname;
+            var filename = "." + path.split(".")[0] + "txt";
+
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function () {
                 if (this.readyState == 4 && this.status == 200) {
                     document.getElementById("demo").innerHTML = this.responseText;
                 }
             };
-            xhttp.open("GET", "test_node.js", true);
+            xhttp.open("GET", filename, true);
             xhttp.send();
         }
     </script>
