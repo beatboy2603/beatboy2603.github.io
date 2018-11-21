@@ -16,7 +16,7 @@ $(document).ready(function () {
     });
     $("#btn-test").click(function (e) {
         e.preventDefault();
-        $.post("https://beatboy2603.herokuapp.com/html", {answer:"answer1"},function (data) {
+        $.post("https://beatboy2603.herokuapp.com/html", {answer:"answer2"},function (data) {
             $("h1").text(data);
         });
         // $.ajax({
