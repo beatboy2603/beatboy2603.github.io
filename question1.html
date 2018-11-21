@@ -7,8 +7,21 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 
-<body>
-    <h1>ABC</h1>
+<body onload="loadQuestion()">
+    <h1 id="demo">ABC</h1>
+
+    <script>
+        function loadQuestion() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("demo").innerHTML = this.responseText;
+                }
+            };
+            xhttp.open("GET", "test_node.js", true);
+            xhttp.send();
+        }
+    </script>
 </body>
 
 </html>
