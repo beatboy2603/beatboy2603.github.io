@@ -14,6 +14,26 @@ $(document).ready(function () {
             console.log("ERROR");
         }
     });
+    $("#btn-test").click(function () {
+        $.post("https://beatboy2603.herokuapp.com/html", {answer:"answer1"},function (data) {
+            $("h1").text(data);
+        });
+        // $.ajax({
+        //     // url: 'http://localhost:6969/question',
+        //     url: 'https://beatboy2603.herokuapp.com/html',
+        //     method: 'POST',
+        //     success: function (data) {
+        //         $('#question p').text(data.question.question);
+        //         $('#answer1 p').text(data.question.answer1);
+        //         $('#answer2 p').text(data.question.answer2);
+        //         $('#answer3 p').text(data.question.answer3);
+        //         console.log("success!", data);
+        //     },
+        //     error: function () {
+        //         console.log("ERROR");
+        //     }
+        // });
+    });
 
     // $("#btn-answer").click(function () {
     //     window.location.replace("./html/checkanswer");

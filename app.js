@@ -68,16 +68,37 @@ app.post('/html/checkAnswer', (req, res) => {
             try {
                 let question1 = JSON.parse(fileData);
                 console.log("debug", answer + " " + question1.rightAnswer);
-                if (answer===question1.rightAnswer){
-                    res.redirect('https://beatboy2603.github.io/html/rightAnswer.html?answer='+answer+'&rightAnswer='+rightAnswer);
-                }else{
-                    res.redirect('https://beatboy2603.github.io/html/wrongAnswer.html?answer='+answer+'&rightAnswer='+rightAnswer);
-                }
                 // if (answer===question1.rightAnswer){
-                //     res.redirect('https://beatboy2603.github.io/html/rightAnswer.html');
+                //     res.redirect('https://beatboy2603.github.io/html/rightAnswer.html?answer='+answer+'&rightAnswer='+rightAnswer);
                 // }else{
-                //     res.redirect('https://beatboy2603.github.io/html/wrongAnswer.html');
+                //     res.redirect('https://beatboy2603.github.io/html/wrongAnswer.html?answer='+answer+'&rightAnswer='+rightAnswer);
                 // }
+                if (answer===question1.rightAnswer){
+                    res.redirect('https://beatboy2603.github.io/html/rightAnswer.html');
+                }else{
+                    res.redirect('https://beatboy2603.github.io/html/wrongAnswer.html');
+                }
+            } catch (error) {
+                console.log("ERROR", err);
+            }
+        }
+    })
+});
+
+app.post('/html', (req, res) => {
+    const answer = {
+        content: req.body.answer,
+    }
+    fs.readFile('./server/question1.txt', (err, fileData) => {
+        if (err) console.log(err);
+        else {
+            try {
+                let question1 = JSON.parse(fileData);
+                res.send({
+                    message: "success!",
+                    question: question1.rightAnswer,
+                    answer: answer
+                });
             } catch (error) {
                 console.log("ERROR", err);
             }
