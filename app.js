@@ -35,7 +35,8 @@ app.get('/html/question1.html', (req, res) => {
                 let question1 = JSON.parse(fileData);
                 res.send({
                     message: "success!",
-                    question: question1
+                    question: question1.question,
+                    answer1: question1.answer1
                     // question: randomQuestion
                 });
             } catch (error) {

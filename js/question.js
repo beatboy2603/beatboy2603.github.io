@@ -4,8 +4,8 @@ $(document).ready(function () {
         url: 'https://beatboy2603.herokuapp.com/html/question1.html',
         method: 'GET',
         success: function (data) {
-            $('#question p').text(data.question.question);
-            $('#answer1 p').text(data.question.answer1);
+            $('#question p').text(data.question);
+            $('#answer1 p').text(data.answer1);
             $('#answer2 p').text(data.question.answer2);
             $('#answer3 p').text(data.question.answer3);
             console.log("success!", data);
