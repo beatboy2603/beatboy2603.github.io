@@ -7,6 +7,10 @@ h1{
     margin-bottom: 10px;
 }
 
+form{
+    width:100%;
+}
+
 .border-blue{
     border: 2px #4472c4 solid;
     border-radius: 5px; 
