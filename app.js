@@ -9,7 +9,7 @@ app.use(bodyParser.urlencoded({
     extended: false
 }));
 
-app.use(cors());
+app.use(corse());
 
 app.listen(process.env.PORT||6969, (err) => {
     if (err) {
@@ -35,7 +35,7 @@ app.get('/html/question1.html', (req, res) => {
                 let question1 = JSON.parse(fileData);
                 res.send({
                     message: "success!",
-                    question: question1.question
+                    question: question1
                     // question: randomQuestion
                 });
             } catch (error) {
@@ -56,4 +56,25 @@ app.get('/html/question1.html', (req, res) => {
     //         }
     //     });
     // });
+});
+
+app.post('/html/checkAnswer', (req, res) => {
+    const answer = {
+        content: req.body.answer,
+    }
+    fs.readFile('./server/question1.txt', (err, fileData) => {
+        if (err) console.log(err);
+        else {
+            try {
+                let question1 = JSON.parse(fileData);
+                if (answer===question1.rightAnswer){
+                    res.redirect('https://beatboy2603.github.io/html/rightAnswer.html');
+                }else{
+                    res.redirect('https://beatboy2603.github.io/html/wrongAnswer.html');
+                }
+            } catch (error) {
+                console.log("ERROR", err);
+            }
+        }
+    })
 });

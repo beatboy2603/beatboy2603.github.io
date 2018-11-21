@@ -4,12 +4,19 @@ $(document).ready(function () {
         url: 'https://beatboy2603.herokuapp.com/html/question1.html',
         method: 'GET',
         success: function (data) {
-            $('#demo').text(data.question);
+            $('#question p').text(data.question.question);
+            $('#answer1 p').text(data.question.answer1);
+            $('#answer2 p').text(data.question.answer2);
+            $('#answer3 p').text(data.question.answer3);
             console.log("success!", data);
         },
         error: function () {
             console.log("ERROR");
         }
+    });
+
+    $("#btn-answer").click(function () {
+        window.location.replace("./html/checkanswer");
     });
 });
 

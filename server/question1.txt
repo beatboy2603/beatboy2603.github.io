@@ -3,5 +3,5 @@
 "answer1": "yes",
 "answer2": "no, it's 10",
 "answer3": "I don't know",
-"rightAnswer": "1"
+"rightAnswer": "answer1"
 }
