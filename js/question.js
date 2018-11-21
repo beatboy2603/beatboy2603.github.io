@@ -15,9 +15,9 @@ $(document).ready(function () {
         }
     });
 
-    $("#btn-answer").click(function () {
-        window.location.replace("./html/checkanswer");
-    });
+    // $("#btn-answer").click(function () {
+    //     window.location.replace("./html/checkanswer");
+    // });
 });
 
 var countDownDate = new Date().getTime() + 20000;
