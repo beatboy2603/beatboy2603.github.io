@@ -14,7 +14,8 @@ $(document).ready(function () {
             console.log("ERROR");
         }
     });
-    $("#btn-test").click(function () {
+    $("#btn-test").click(function (e) {
+        e.preventDefault();
         $.post("https://beatboy2603.herokuapp.com/html", {answer:"answer1"},function (data) {
             $("h1").text(data);
         });
