@@ -24,7 +24,7 @@ app.get('/html/question1.html', (req, res) => {
                 // let questions = JSON.parse(fileData);
                 // let randomNum = Math.floor(Math.random() * questions.length);
                 // let randomQuestion = questions[randomNum];
-                let question1 = JSON.parse(fileData);
+                let question1 = JSON.parse(fileData[0]);
                 res.send({
                     message: "success!",
                     question: question1
