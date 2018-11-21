@@ -16,6 +16,11 @@ app.listen(process.env.PORT||6969, (err) => {
     }
 });
 
+app.get("/", (req, res) => {
+    res.write("abc");
+    res.end();
+})
+
 app.get('/html/question1.html', (req, res) => {
     fs.readFile('./server/question1.txt', (err, fileData) => {
         if (err) console.log(err);
@@ -24,10 +29,10 @@ app.get('/html/question1.html', (req, res) => {
                 // let questions = JSON.parse(fileData);
                 // let randomNum = Math.floor(Math.random() * questions.length);
                 // let randomQuestion = questions[randomNum];
-                let question1 = JSON.parse(fileData[0]);
+                let question1 = JSON.parse(fileData);
                 res.send({
                     message: "success!",
-                    question: question1
+                    question: question1.question
                     // question: randomQuestion
                 });
             } catch (error) {
