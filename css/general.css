@@ -9,8 +9,22 @@ body{
     width: 100%;
 }
 
-.flex-box{
+.flex-box-center-all{
     display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-box-center-column{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-box-center-row{
+    display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
 }
