@@ -73,7 +73,7 @@ app.post('/html/checkAnswer', (req, res) => {
                 // }else{
                 //     res.redirect('https://beatboy2603.github.io/html/wrongAnswer.html?answer='+answer+'&rightAnswer='+rightAnswer);
                 // }
-                if (answer===question1.rightAnswer){
+                if (answer.content===question1.rightAnswer){
                     res.redirect('https://beatboy2603.github.io/html/rightAnswer.html');
                 }else{
                     res.redirect('https://beatboy2603.github.io/html/wrongAnswer.html');
